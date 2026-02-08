@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Incapp Book App</h1>
+	<hr>
+	<a href='/'>Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<a href='login'>Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<hr>
+	<p th:if="${error}" th:text="${error}" style="background-color: red; color: white; padding: 5px;"></p>
+	<h2>Login</h2>
+	<form action="Login" method="post">
+		<label>Id:</label>
+		<input type="text" name="id" required />
+		<br><br>
+		<label>Password:</label>
+		<input type="password" name="password" required />
+		<br><br>
+		<button>Submit</button>
+	</form>
+</body>
+</html>

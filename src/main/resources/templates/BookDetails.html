@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Incapp Book App</h1>
+	<hr>
+	<a href='/'>Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<a href='login'>Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<hr>
+	
+	<div style='background-color:cyan; padding:15px; margin:10px; width:250px'> 
+		<!-- <img height='100px' th:src='@{/GetImage(name=${book.name})}' />  -->
+		<img th:if="${book.image}" height='100px' th:src='@{/GetImage2(name=${book.name})}' /> 
+		<img th:if="${book.image==null}" height='100px' src='book.png' /> 
+		<p>Name: <span th:text="${book.name}" ></span> </p>
+		<p>Author Name: <span th:text="${book.aname}" ></span> </p> 
+		<p>Publisher Name: <span th:text="${book.pname}" ></span> </p> 
+		<p>Price: <span th:text="${book.price}" ></span> </p>
+		<div th:if='${book.content}'>
+			<hr/> 
+			<a target='_blank' th:href='@{/GetPdf(name=${book.name})}'>View Pdf</a> 
+			<hr/> 
+			<form action='DownloadPdf' method='post'> 
+				<input type='hidden' name='name' th:value='${book.name}'> 
+				<button>Download Pdf</button> 
+			</form> 
+		</div>
+		
+	</div>
+</body>
+</html>

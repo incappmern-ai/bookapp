@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Incapp Book App</h1>
+	<hr>
+	<p>
+		<a href='UserHome'>Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
+		<a href='Logout'>Logout</a> &nbsp;&nbsp;&nbsp;&nbsp;
+		Welcome: <b th:text="${session.userName}"> </b>
+	</p>
+	<hr>
+	<p th:if="${msg}" th:text="${msg}" style="background-color: yellow; padding: 5px;"></p>
+	<h2>Add New Book</h2>
+	<form action="AddBook" method="post" enctype="multipart/form-data">
+		<label>Name:</label>
+		<input type="text" name="name" required />
+		<br><br>
+		<label>Author Name:</label>
+		<input type="text" name="aname" required />
+		<br><br>
+		<label>Publisher Name:</label>
+		<input type="text" name="pname" required />
+		<br><br>
+		<label>Price:</label>
+		<input type="number" name="price" required />
+		<br><br>
+		<label>Content:</label>
+		<input type="file" accept=".pdf" name="ctn"  />
+		<br><br>
+		<label>Image:</label>
+		<input type="file" accept=".jpg,.png,.jpeg" name="cImage"  />
+		<br><br>
+		<button>Submit</button>
+	</form>
+	
+</body>
+</html>
